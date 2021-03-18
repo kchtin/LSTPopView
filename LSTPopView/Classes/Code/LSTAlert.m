@@ -133,14 +133,37 @@
 
 - (void)initDefaultData
 {
-    _hemStyle                 = LSTHemStyleCenter;
-    _popStyle                 = LSTPopStyleFade;
-    _dismissStyle             = LSTDismissStyleFade;
-    _bgColor                  = UIColor.blackColor;
-    _bgAlpha                  = 0.3;
+    //初始化配置
+    _isClickBgDismiss = NO;
     _isObserverScreenRotation = YES;
-    _isAvoidKeyboard          = YES;
-    _avoidKeyboardSpace       = 10;
+    _bgAlpha = 0.25;
+    _popStyle = LSTPopStyleFade;
+    _dismissStyle = LSTDismissStyleFade;
+    _popDuration = -1.0f;
+    _dismissDuration = -1.0f;
+    _hemStyle = LSTHemStyleCenter;
+    _adjustX = 0;
+    _adjustY = 0;
+    _isClickFeedback = NO;
+    _isAvoidKeyboard = YES;
+    _avoidKeyboardSpace = 10;
+    _bgColor = [UIColor blackColor];
+    _identifier = @"";
+    _showTime = 0.0;
+    _priority = 0;
+    _isHideBg = NO;
+    _isImpactFeedback = NO;
+    _rectCorners = UIRectCornerAllCorners;
+    
+    _isSingle = NO;
+    
+    //拖拽相关属性初始化
+    _dragStyle = LSTDragStyleNO;
+    _dragDismissStyle = LSTDismissStyleNO;
+    _dragDistance = 0.0f;
+    _dragReboundTime = 0.25;
+    _dragDismissDuration = -1.0f;
+    _swipeVelocity = 1000.0f;
 }
 
 - (NSHashTable *)delegate
